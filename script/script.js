@@ -75,5 +75,4 @@ playButton.addEventListener('click', function() {
             }
         }
     )
-
 });
