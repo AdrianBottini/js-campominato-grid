@@ -38,7 +38,7 @@ playButton.addEventListener('click', function() {
     }
     var mines = [];
 
-    while(mines.length < 10) {
+    while(mines.length < 16) {
         var numMina = Math.floor(Math.random() * howMany) + 1;
         if(mines.indexOf(numMina) === -1) {
             mines.push(numMina);
@@ -61,7 +61,7 @@ playButton.addEventListener('click', function() {
         square[i].addEventListener('click', 
             function() {
                 let victory = document.querySelectorAll('.selected');
-                if(victory.length === howMany - 10 && document.querySelectorAll('.esplosa').length === 0){
+                if(victory.length === howMany - 16 && document.querySelectorAll('.esplosa').length === 0){
                     eleSquares.innerHTML += `<div class="endgame">Hai vinto!</div>`;
                 }
             }
@@ -70,7 +70,7 @@ playButton.addEventListener('click', function() {
     const showButton = document.getElementById('show');
     showButton.addEventListener('click', 
         function() {
-            for(i=0; i<10; i++) {
+            for(i=0; i<16; i++) {
                 square[mines[i]-1].classList.toggle('mostra-mine');
             }
         }
